@@ -12,12 +12,15 @@ migration_group: aen_import
 label: 'Import AeN Events #2'
 source:
   plugin: csv
-  path: /var/www/multisite/aen_test3.csv
-  delimiter: ','
+  path: /var/www/multisite/export_aen_2021_06_16_del.csv
+  delimiter: '|'
   header_offset: 0
   ids:
     - eventid
   fields:
+    -
+      name: line
+      label: 'line number'
     -
       name: eventid
       label: 'Event ID'
@@ -97,24 +100,13 @@ source:
       name: source
       label: Source
     -
-      name: timestamp
-      label: 'Event datetime'
+      name: cruisename
+      label: Cruisename
     -
-      name: location
-      label: 'Event location'
-    -
-      name: title
-      label: Title
+      name: event_timestamp
+      label: 'Event timestamp'
 process:
-  title:
-    plugin: default_value
-    default_value: Title
-  body/value:
-    plugin: default_value
-    default_value: '<h3>Abstract</h3> <span><em>This is an abstract of the event</em></span>'
-  body/format:
-    plugin: default_value
-    default_value: full_html
+  title: eventid
   field_eventid: eventid
   field_parenteventid: parenteventid
   field_cruisenumber: cruisenumber
@@ -131,37 +123,57 @@ process:
   field_pi_institution: pi_institution
   field_recordedby: recordedby
   field_eventremarks: eventremarks
-  field_other: other
-  field_eventdate: eventdate
-  field_eventtime: eventtime
+  field_other/value:
+    -
+      plugin: transform_aen_metadata
+      source: other
+  field_other/format:
+    -
+      plugin: default_value
+      default_value: basic_html
+  field_eventdate:
+    -
+      plugin: format_date
+      from_format: Y-m-d
+      to_format: Y-m-d
+      source: eventdate
+  field_eventtime:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: eventtime
+    -
+      plugin: tranform_eventtime
+      source: eventtime
+  field_metadata/value:
+    -
+      plugin: transform_aen_metadata
+      source: metadata
+  field_metadata/format:
+    -
+      plugin: default_value
+      default_value: basic_html
+  field_cruisename: cruisename
   field_station_name_ref:
     plugin: migration_lookup
     migration: aen_stations_csv_import
     source: stationname
   field_created:
     -
-      plugin: substr
-      start: 0
-      length: 19
-      source: created
-    -
-      plugin: log
-    -
       plugin: format_date
-      from_format: 'Y-m-d H:i:s'
+      from_format: 'Y-m-d\TH:i:s\Z'
       to_format: 'Y-m-d\TH:i:s'
+      from_timezone: UTC
+      to_timezone: UTC
+      source: created
   field_modified:
     -
-      plugin: substr
-      start: 0
-      length: 19
-      source: modified
-    -
-      plugin: log
-    -
       plugin: format_date
-      from_format: 'Y-m-d H:i:s'
+      from_format: 'Y-m-d\TH:i:s\Z'
       to_format: 'Y-m-d\TH:i:s'
+      from_timezone: UTC
+      to_timezone: UTC
+      source: modified
   field_history: history
   field_geolocation/lat: lat
   field_geolocation/lng: lon
@@ -170,14 +182,16 @@ process:
     source: source
   field_timestamp:
     -
-      plugin: concat
-      source:
-        - eventdate
-        - eventtime
+      plugin: str_replace
+      source: event_timestamp
+      regex: true
+      search: /\.\d+/
+      replace: ''
     -
       plugin: format_date
-      from_format: 'Y-m-dH:i:s'
+      from_format: 'Y-m-d\TH:i:s\Z'
       to_format: 'Y-m-d\TH:i:s'
+      from_timezone: UTC
       to_timezone: UTC
   field_location:
     plugin: geofield_latlon
