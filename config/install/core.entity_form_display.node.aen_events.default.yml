@@ -1,0 +1,342 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.aen_events.body
+    - field.field.node.aen_events.field_bottlenumber
+    - field.field.node.aen_events.field_bottomdepthinmeters
+    - field.field.node.aen_events.field_created
+    - field.field.node.aen_events.field_cruisename
+    - field.field.node.aen_events.field_cruisenumber
+    - field.field.node.aen_events.field_eventdate
+    - field.field.node.aen_events.field_eventid
+    - field.field.node.aen_events.field_eventlocation
+    - field.field.node.aen_events.field_eventremarks
+    - field.field.node.aen_events.field_eventtime
+    - field.field.node.aen_events.field_geartype
+    - field.field.node.aen_events.field_geolocation
+    - field.field.node.aen_events.field_history
+    - field.field.node.aen_events.field_location
+    - field.field.node.aen_events.field_metadata
+    - field.field.node.aen_events.field_modified
+    - field.field.node.aen_events.field_other
+    - field.field.node.aen_events.field_parenteventid
+    - field.field.node.aen_events.field_pi_email
+    - field.field.node.aen_events.field_pi_institution
+    - field.field.node.aen_events.field_pi_name
+    - field.field.node.aen_events.field_reordedby
+    - field.field.node.aen_events.field_sampledepthinmeters
+    - field.field.node.aen_events.field_sampletype
+    - field.field.node.aen_events.field_samplingprotocol
+    - field.field.node.aen_events.field_smplelocation
+    - field.field.node.aen_events.field_source
+    - field.field.node.aen_events.field_station_name_ref
+    - field.field.node.aen_events.field_stationname
+    - field.field.node.aen_events.field_timestamp
+    - node.type.aen_events
+  module:
+    - datetime
+    - geofield
+    - geolocation
+    - path
+    - text
+    - time_field
+id: node.aen_events.default
+targetEntityType: node
+bundle: aen_events
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 121
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bottlenumber:
+    weight: 136
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_bottomdepthinmeters:
+    weight: 132
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_created:
+    weight: 143
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_cruisename:
+    weight: 157
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_cruisenumber:
+    weight: 127
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_eventdate:
+    weight: 148
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_eventid:
+    weight: 151
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_eventlocation:
+    weight: 153
+    settings: {  }
+    third_party_settings: {  }
+    type: geolocation_latlng
+    region: content
+  field_eventremarks:
+    weight: 142
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_eventtime:
+    weight: 149
+    settings:
+      enabled: false
+      step: 5
+    third_party_settings: {  }
+    type: time_widget
+    region: content
+  field_geartype:
+    weight: 130
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_geolocation:
+    weight: 154
+    settings: {  }
+    third_party_settings: {  }
+    type: geolocation_latlng
+    region: content
+  field_history:
+    weight: 145
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_location:
+    weight: 123
+    settings:
+      html5_geolocation: false
+    third_party_settings: {  }
+    type: geofield_latlon
+    region: content
+  field_metadata:
+    weight: 156
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_modified:
+    weight: 144
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_other:
+    weight: 158
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_parenteventid:
+    weight: 150
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_pi_email:
+    weight: 139
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_pi_institution:
+    weight: 140
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_pi_name:
+    weight: 138
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_reordedby:
+    weight: 141
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_sampledepthinmeters:
+    weight: 131
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_sampletype:
+    weight: 128
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_samplingprotocol:
+    weight: 129
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_smplelocation:
+    weight: 137
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_source:
+    weight: 146
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_station_name_ref:
+    weight: 155
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_stationname:
+    weight: 124
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_timestamp:
+    weight: 147
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 120
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden: {  }

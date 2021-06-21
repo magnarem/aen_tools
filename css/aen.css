@@ -1,0 +1,30 @@
+#leaflet-map {
+	height: 350px;
+
+}
+
+.views-field a:link {
+	color: indigo
+}
+.views-field a:visited {
+        color: indigo
+}
+.views-field a:hover {
+        color: blue
+}
+
+.view-content ul {
+  list-style-type: none;
+}
+
+.aen a:link {
+        color: indigo
+}
+.aen a:visited {
+        color: indigo
+}
+.aen a:hover {
+        color: blue
+}
+
+

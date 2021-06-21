@@ -1,0 +1,121 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.aen_stations.field_bottom_depth
+    - field.field.node.aen_stations.field_location_geofield
+    - field.field.node.aen_stations.field_location_geolocation
+    - field.field.node.aen_stations.field_station_name
+    - node.type.aen_stations
+  module:
+    - geolocation
+    - leaflet
+    - user
+id: node.aen_stations.default
+targetEntityType: node
+bundle: aen_stations
+mode: default
+content:
+  aen_sation_events_entity_view_1:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bottom_depth:
+    weight: 3
+    label: inline
+    settings:
+      thousand_separator: "\t"
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_location_geofield:
+    type: leaflet_formatter_default
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      multiple_map: false
+      popup: true
+      popup_content: "<h2>[node:field_station_name]</h2>\r\n<strong>[node:field_location:lat], [node:field_location:lon]</strong>"
+      leaflet_map: esri-ocean_basemap
+      height: 400
+      height_unit: px
+      reset_map:
+        position: topright
+        control: false
+      map_position:
+        center:
+          lat: !!float 0
+          lon: !!float 0
+        zoom: 4
+        minZoom: 1
+        maxZoom: 18
+        zoomFiner: 0
+        force: false
+      weight: ''
+      icon:
+        iconType: marker
+        iconUrl: ''
+        shadowUrl: ''
+        className: ''
+        html: '<div></div>'
+        html_class: leaflet-map-divicon
+        circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
+        iconSize:
+          x: ''
+          'y': ''
+        iconAnchor:
+          x: ''
+          'y': ''
+        shadowSize:
+          x: ''
+          'y': ''
+        shadowAnchor:
+          x: ''
+          'y': ''
+        popupAnchor:
+          x: ''
+          'y': ''
+      leaflet_markercluster:
+        options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false}'
+        control: false
+        include_path: false
+      path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2","radius":"6"}'
+      geocoder:
+        settings:
+          position: topright
+          input_size: 25
+          min_terms: 4
+          delay: 800
+          zoom: 16
+          options: ''
+          popup: false
+        control: false
+      hide_empty_map: false
+      disable_wheel: false
+      fullscreen_control: false
+      gesture_handling: false
+    third_party_settings: {  }
+  field_location_geolocation:
+    weight: 2
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: geolocation_sexagesimal
+    region: content
+  field_station_name:
+    weight: 1
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true
+  links: true
+  search_api_excerpt: true

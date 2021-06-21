@@ -1,0 +1,58 @@
+langcode: en
+status: true
+dependencies: {  }
+id: aen_stations_csv_import
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Content
+  - AeN
+migration_group: aen_import
+label: 'Import AeN Stations #1'
+source:
+  plugin: csv
+  path: /var/www/multisite/aen_stations.csv
+  delimiter: ','
+  header_offset: 0
+  ids:
+    - stationname
+  fields:
+    -
+      name: stationname
+      label: 'Station name key'
+    -
+      name: avglat
+      label: 'Average Latitude'
+    -
+      name: avglong
+      label: 'Average longitue'
+    -
+      name: avgdepth
+      label: 'Average bottom depth'
+    -
+      name: sname
+      label: 'Station name'
+process:
+  title:
+    plugin: skip_on_empty
+    method: row
+    source: stationname
+  field_station_name: sname
+  field_bottom_depth: avgdepth
+  field_location_geolocation/lat: avglat
+  field_location_geolocation/lng: avglong
+  field_location_geofield:
+    plugin: geofield_latlon
+    source:
+      - avglat
+      - avglong
+  type:
+    plugin: default_value
+    default_value: aen_stations
+  status:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: 'entity:node'
+migration_dependencies: null

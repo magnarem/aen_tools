@@ -1,0 +1,8 @@
+aen_tools:
+  path: '/aen/tools'
+  defaults:
+    _controller: '\Drupal\aen_tools\Controller\AenToolsController::render'
+    _title: 'Nansen Legacy Tools'
+  requirements:
+    _permission: 'access content'
+

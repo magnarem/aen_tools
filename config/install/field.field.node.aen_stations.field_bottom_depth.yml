@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_bottom_depth
+    - node.type.aen_stations
+id: node.aen_stations.field_bottom_depth
+field_name: field_bottom_depth
+entity_type: node
+bundle: aen_stations
+label: 'Bottom depth'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

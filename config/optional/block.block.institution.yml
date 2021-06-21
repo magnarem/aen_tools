@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.institution
+  module:
+    - facets
+    - system
+  theme:
+    - metsis
+id: institution
+theme: metsis
+region: sidebar_first
+weight: -4
+provider: null
+plugin: 'facet_block:institution'
+settings:
+  id: 'facet_block:institution'
+  label: Institution
+  provider: facets
+  label_display: visible
+  block_id: institution
+visibility:
+  request_path:
+    id: request_path
+    pages: '/aen/*'
+    negate: false
+    context_mapping: {  }

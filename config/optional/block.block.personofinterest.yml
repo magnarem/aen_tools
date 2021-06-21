@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.person_of_interest
+  module:
+    - facets
+    - system
+  theme:
+    - metsis
+id: personofinterest
+theme: metsis
+region: sidebar_first
+weight: -5
+provider: null
+plugin: 'facet_block:person_of_interest'
+settings:
+  id: 'facet_block:person_of_interest'
+  label: 'Person of interest'
+  provider: facets
+  label_display: visible
+  block_id: personofinterest
+visibility:
+  request_path:
+    id: request_path
+    pages: '/aen/*'
+    negate: false
+    context_mapping: {  }

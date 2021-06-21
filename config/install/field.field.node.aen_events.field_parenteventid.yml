@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_parenteventid
+    - node.type.aen_events
+id: node.aen_events.field_parenteventid
+field_name: field_parenteventid
+entity_type: node
+bundle: aen_events
+label: 'Parent Event ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

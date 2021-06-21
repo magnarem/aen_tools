@@ -1,0 +1,6 @@
+aen_tools:
+  title: 'Nansen Legacy Tools'
+  description: 'Nansen Legacy Tools'
+  route_name: aen_tools
+  menu_name: main
+  weight: 999

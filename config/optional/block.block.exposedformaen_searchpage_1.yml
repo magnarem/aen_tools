@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.aen_search
+  module:
+    - system
+    - views
+  theme:
+    - metsis
+id: exposedformaen_searchpage_1
+theme: metsis
+region: sidebar_first
+weight: -7
+provider: null
+plugin: 'views_exposed_filter_block:aen_search-page_1'
+settings:
+  id: 'views_exposed_filter_block:aen_search-page_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: '/aen/*'
+    negate: false
+    context_mapping: {  }

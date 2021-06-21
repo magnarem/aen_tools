@@ -1,0 +1,49 @@
+name: 'AeN Tools'
+description: 'Module for importing and searching AeN events and stations'
+type: module
+core: 8.x
+version: 1.x
+package: METSIS
+dependencies:
+  - search_api
+  - views_fieldsets
+  - search_api_solr
+  - views
+  - search_api_autocomplete
+  - facets
+  - twig_tweak
+  - twig_views
+  - date_popup
+  - search_api_sorts
+  - blazy
+  - lazy
+  - back_to_top
+  - extlink
+  - fontawesome
+  - datetime
+  - geofield
+  - geolocation
+  - text
+  - views_field_view
+  - eva
+  - node
+  - user
+  - rest
+  - views_autocomplete_filters
+  - views_geojson
+  - leaflet_views
+  - menu_ui
+  - system
+  - aen_tools
+  - pathauto
+  - leaflet_markercluster
+  - leaflet_more_maps
+  - leaflet_more_markers
+  - geolocation_leaflet
+  - leaflet_geojson
+  - timepicker
+  - migrate
+  - migrate_plus
+  - migrate_tools
+  - migrate_source_csv
+  - search_api_location

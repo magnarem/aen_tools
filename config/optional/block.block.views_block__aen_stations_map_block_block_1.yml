@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.aen_stations_map_block
+  module:
+    - system
+    - views
+  theme:
+    - metsis
+id: views_block__aen_stations_map_block_block_1
+theme: metsis
+region: content
+weight: -20
+provider: null
+plugin: 'views_block:aen_stations_map_block-block_1'
+settings:
+  id: 'views_block:aen_stations_map_block-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /aen/stations
+    negate: false
+    context_mapping: {  }
