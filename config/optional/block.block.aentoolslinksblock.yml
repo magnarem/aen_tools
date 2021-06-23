@@ -5,7 +5,7 @@ dependencies:
     - aen_tools
     - system
   theme:
-    - metsis
+    - sios 
 id: aentoolslinksblock
 theme: metsis
 region: sidebar_second

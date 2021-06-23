@@ -7,7 +7,7 @@ dependencies:
     - system
     - views
   theme:
-    - metsis
+    - sios
 id: views_block__aen_stations_map_block_block_1
 theme: metsis
 region: content

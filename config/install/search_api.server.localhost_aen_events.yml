@@ -26,17 +26,17 @@ dependencies:
   module:
     - search_api_solr
 id: localhost_aen_events
-name: localhost_aen_events
+name: 'SolR OSTACK'
 description: 'AeN Solr Core'
 backend: search_api_solr
 backend_config:
   connector: standard
   connector_config:
     scheme: http
-    host: localhost
+    host:
     port: 8983
     path: /
-    core: aen_events
+    core: aen-tools
     timeout: 5
     index_timeout: 5
     optimize_timeout: 10

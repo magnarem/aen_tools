@@ -7,7 +7,7 @@ dependencies:
     - system
     - views
   theme:
-    - metsis
+    - sios 
 id: exposedformaen_searchpage_1
 theme: metsis
 region: sidebar_first
