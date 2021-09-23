@@ -1,9 +1,9 @@
 name: 'AeN Tools'
 description: 'Module for importing and searching AeN events and stations'
 type: module
-core: 8.x
-version: 1.x
-package: METSIS
+core_version_requirement: ^8.8 || ^9
+version: 1.0.1
+package: SIOS
 dependencies:
   - search_api
   - views_fieldsets
