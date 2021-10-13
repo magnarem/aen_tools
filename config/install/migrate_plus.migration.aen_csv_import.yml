@@ -19,9 +19,6 @@ source:
     - eventid
   fields:
     -
-      name: line
-      label: 'line number'
-    -
       name: eventid
       label: 'Event ID'
     -
@@ -40,10 +37,10 @@ source:
       name: eventdate
       label: 'event date'
     -
-      name: lat
+      name: decimallatitude
       label: lat
     -
-      name: lon
+      name: decimallongitude
       label: lon
     -
       name: sampletype
@@ -102,6 +99,9 @@ source:
     -
       name: cruisename
       label: Cruisename
+    -
+      name: uniquestations
+      label: 'Unique Stations'
     -
       name: event_timestamp
       label: 'Event timestamp'
