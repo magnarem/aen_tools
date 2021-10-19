@@ -2,18 +2,16 @@ langcode: en
 status: true
 dependencies:
   module:
+    - geolocation
     - node
-id: node.field_pi_institution
-field_name: field_pi_institution
+id: node.field_geolocation
+field_name: field_geolocation
 entity_type: node
-type: string
-settings:
-  max_length: 255
-  is_ascii: false
-  case_sensitive: false
-module: core
+type: geolocation
+settings: {  }
+module: geolocation
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

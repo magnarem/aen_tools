@@ -12,7 +12,7 @@ migration_group: aen_import
 label: 'Import AeN Events #2'
 source:
   plugin: csv
-  path: /var/www/multisite/export_aen_2021_06_16_del.csv
+  path: /var/www/multisite/export_aen_2021_08_13.csv
   delimiter: '|'
   header_offset: 0
   ids:
@@ -106,7 +106,13 @@ source:
       name: event_timestamp
       label: 'Event timestamp'
 process:
-  title: eventid
+  title:
+    -
+      plugin: transform_aen_title
+      source: metadata
+    -
+      plugin: default_value
+      default_value: eventid
   field_eventid: eventid
   field_parenteventid: parenteventid
   field_cruisenumber: cruisenumber
@@ -118,9 +124,31 @@ process:
   field_bottlenumber: bottlenumber
   field_samplingprotocol: samplingprotocol
   field_samplelocation: samplelocation
-  field_pi_name: pi_name
-  field_pi_email: pi_email
-  field_pi_institution: pi_institution
+  field_unique_stations: uniquestations
+  field_pi_name:
+    -
+      plugin: explode
+      source: pi_name
+      delimiter: ';'
+    -
+      plugin: default_value
+      default_value: pi_name
+  field_pi_email:
+    -
+      plugin: explode
+      source: pi_email
+      delimiter: ';'
+    -
+      plugin: default_value
+      default_value: pi_email
+  field_pi_institution:
+    -
+      plugin: explode
+      source: pi_institution
+      delimiter: ';'
+    -
+      plugin: default_value
+      default_value: pi_institution
   field_recordedby: recordedby
   field_eventremarks: eventremarks
   field_other/value:

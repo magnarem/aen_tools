@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.aen_stations.field_bottom_depth
     - field.field.node.aen_stations.field_location_geofield
     - field.field.node.aen_stations.field_location_geolocation
     - field.field.node.aen_stations.field_station_name
@@ -22,13 +21,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_bottom_depth:
-    weight: 125
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
-    region: content
   field_location_geofield:
     weight: 122
     settings:

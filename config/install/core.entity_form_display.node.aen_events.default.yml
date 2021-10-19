@@ -33,6 +33,7 @@ dependencies:
     - field.field.node.aen_events.field_station_name_ref
     - field.field.node.aen_events.field_stationname
     - field.field.node.aen_events.field_timestamp
+    - field.field.node.aen_events.field_unique_stations
     - node.type.aen_events
   module:
     - datetime
@@ -286,6 +287,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
+    region: content
+  field_unique_stations:
+    weight: 159
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   langcode:
     type: language_select

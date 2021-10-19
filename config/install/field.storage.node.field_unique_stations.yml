@@ -3,8 +3,8 @@ status: true
 dependencies:
   module:
     - node
-id: node.field_pi_institution
-field_name: field_pi_institution
+id: node.field_unique_stations
+field_name: field_unique_stations
 entity_type: node
 type: string
 settings:
@@ -13,7 +13,7 @@ settings:
   case_sensitive: false
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

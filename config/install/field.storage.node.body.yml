@@ -3,15 +3,16 @@ status: true
 dependencies:
   module:
     - node
-id: node.field_pi_email
-field_name: field_pi_email
+    - text
+id: node.body
+field_name: body
 entity_type: node
-type: email
+type: text_with_summary
 settings: {  }
-module: core
+module: text
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
-persist_with_no_fields: false
+persist_with_no_fields: true
 custom_storage: false

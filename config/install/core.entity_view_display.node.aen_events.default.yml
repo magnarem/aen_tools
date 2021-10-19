@@ -33,6 +33,7 @@ dependencies:
     - field.field.node.aen_events.field_station_name_ref
     - field.field.node.aen_events.field_stationname
     - field.field.node.aen_events.field_timestamp
+    - field.field.node.aen_events.field_unique_stations
     - node.type.aen_events
   module:
     - datetime
@@ -87,7 +88,7 @@ bundle: aen_events
 mode: default
 content:
   aen_event_children_entity_view_1:
-    weight: 21
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -383,5 +384,6 @@ hidden:
   field_eventlocation: true
   field_geolocation: true
   field_stationname: true
+  field_unique_stations: true
   langcode: true
   search_api_excerpt: true

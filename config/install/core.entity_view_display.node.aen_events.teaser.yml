@@ -34,6 +34,7 @@ dependencies:
     - field.field.node.aen_events.field_station_name_ref
     - field.field.node.aen_events.field_stationname
     - field.field.node.aen_events.field_timestamp
+    - field.field.node.aen_events.field_unique_stations
     - node.type.aen_events
   module:
     - datetime
@@ -121,4 +122,5 @@ hidden:
   field_smplelocation: true
   field_source: true
   field_stationname: true
+  field_unique_stations: true
   langcode: true
