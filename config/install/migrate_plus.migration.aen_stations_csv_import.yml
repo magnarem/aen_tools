@@ -38,7 +38,7 @@ process:
     method: row
     source: stationname
   field_station_name: sname
-  field_bottom_depth: avgdepth
+#  field_bottom_depth: avgdepth
   field_location_geolocation/lat: avglat
   field_location_geolocation/lng: avglong
   field_location_geofield:
