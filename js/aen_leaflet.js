@@ -5,10 +5,10 @@
     Drupal.behaviors.aen_tools = {
         attach: function (context, drupalSettings) {
           console.log("aen_leaflet behaviour");
-        	  $(document).bind('leaflet-map', function(e, map, lMap) {
+        	    $('.leaflet-container', context).each().once(function() {
               console.log("aen_leaflet behaviour - bind function");
-			   var crs = new L.Proj.CRS('EPSG:32661', '+proj=stere +lat_0=90 +lat_ts=90 +lon_0=0 +k=0.994 +x_0=2000000 +y_0=2000000 +ellps=WGS84 +datum=WGS84 +units=m +no_defs',
-				   {
+			           var crs = new L.Proj.CRS('EPSG:32661', '+proj=stere +lat_0=90 +lat_ts=90 +lon_0=0 +k=0.994 +x_0=2000000 +y_0=2000000 +ellps=WGS84 +datum=WGS84 +units=m +no_defs',
+
 					   //origin: [2000000.00,42447.08],
 			    	 //bounds: [[1994055.62,5405875.53],[2000969.46,2555456.55]],
 			 resolutions: [
