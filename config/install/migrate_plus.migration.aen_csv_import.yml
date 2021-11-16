@@ -131,6 +131,9 @@ process:
       source: pi_name
       delimiter: ';'
     -
+      plugin: callback
+      callable: trim
+    -
       plugin: default_value
       default_value: pi_name
   field_pi_email:
@@ -139,6 +142,9 @@ process:
       source: pi_email
       delimiter: ';'
     -
+      plugin: callback
+      callable: trim
+    -
       plugin: default_value
       default_value: pi_email
   field_pi_institution:
@@ -146,6 +152,9 @@ process:
       plugin: explode
       source: pi_institution
       delimiter: ';'
+    -
+      plugin: callback
+      callable: trim
     -
       plugin: default_value
       default_value: pi_institution
