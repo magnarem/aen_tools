@@ -4,13 +4,13 @@
 }
 
 .views-field a:link {
-	color: indigo
+	color: indigo;
 }
 .views-field a:visited {
-        color: indigo
+        color: indigo;
 }
 .views-field a:hover {
-        color: blue
+        color: blue;
 }
 
 .view-content ul {
@@ -18,13 +18,30 @@
 }
 
 .aen a:link {
-        color: indigo
+        color: indigo;
 }
 .aen a:visited {
-        color: indigo
+        color: indigo;
 }
 .aen a:hover {
-        color: blue
+        color: blue;
 }
 
+.aen table th  a:link {
+        color: white !important;
+}
+.aen table th a:visited {
+        color: white !important;
+}
+.aen table th a:hover {
+        color: grey !important;
+}
 
+.aen-details {
+   border-color: black !important;
+   border-width: 1px !important;
+   border-style: solid !important;
+   padding: 8px 16px !important;
+   margin-top: 16px !important;;
+   margin-bottom: 16px !important;
+   }

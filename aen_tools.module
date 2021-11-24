@@ -31,11 +31,3 @@ function aen_tools_theme( $existing, $type, $theme, $path ){
         ],
     ];
 }
-
-
-function aen_tools_leaflet_map_info_alter(&$map_info) {
-    foreach ($map_info as $map_id => $info) {
-      $map_info[$map_id]['settings']['zoom'] = 10;
-      $map_info[$map_id]['label'] += ' ' . t('default yr zoom=2');
-    }
-  }

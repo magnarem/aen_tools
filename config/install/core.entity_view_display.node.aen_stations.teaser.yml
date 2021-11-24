@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.aen_stations.field_bottom_depth
     - field.field.node.aen_stations.field_location_geofield
     - field.field.node.aen_stations.field_location_geolocation
     - field.field.node.aen_stations.field_station_name
@@ -14,17 +15,13 @@ targetEntityType: node
 bundle: aen_stations
 mode: teaser
 content:
-  aen_sation_events_entity_view_1:
-    weight: 10
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   links:
     weight: 100
     settings: {  }
     third_party_settings: {  }
     region: content
 hidden:
+  field_bottom_depth: true
   field_location_geofield: true
   field_location_geolocation: true
   field_station_name: true

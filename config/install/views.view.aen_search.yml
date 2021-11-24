@@ -10,7 +10,7 @@ dependencies:
     - field.storage.node.field_eventid
     - field.storage.node.field_eventremarks
     - field.storage.node.field_geartype
-    - field.storage.node.field_geolocation
+    - field.storage.node.field_aen_geolocation
     - field.storage.node.field_history
     - field.storage.node.field_location
     - field.storage.node.field_metadata
@@ -2312,10 +2312,10 @@ display:
           multi_separator: ', '
           format_plural_values: {  }
           plugin_id: search_api_numeric
-        field_geolocation:
-          id: field_geolocation
+        field_aen_geolocation:
+          id: field_aen_geolocation
           table: search_api_index_aen_index
-          field: field_geolocation
+          field: field_aen_geolocation
           relationship: none
           group_type: group
           admin_label: ''
@@ -2686,7 +2686,7 @@ display:
         - 'config:field.storage.node.field_eventid'
         - 'config:field.storage.node.field_eventremarks'
         - 'config:field.storage.node.field_geartype'
-        - 'config:field.storage.node.field_geolocation'
+        - 'config:field.storage.node.field_aen_geolocation'
         - 'config:field.storage.node.field_history'
         - 'config:field.storage.node.field_location'
         - 'config:field.storage.node.field_metadata'
@@ -3271,7 +3271,7 @@ display:
           prefix: ''
           separator: ', '
           suffix: ''
-        field_geolocation:
+        field_aen_geolocation:
           merge_option: merge_unique
           exclude_first: 0
           prefix: ''
@@ -3547,7 +3547,7 @@ display:
         - 'config:field.storage.node.field_eventid'
         - 'config:field.storage.node.field_eventremarks'
         - 'config:field.storage.node.field_geartype'
-        - 'config:field.storage.node.field_geolocation'
+        - 'config:field.storage.node.field_aen_geolocation'
         - 'config:field.storage.node.field_history'
         - 'config:field.storage.node.field_location'
         - 'config:field.storage.node.field_metadata'

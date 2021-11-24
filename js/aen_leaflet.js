@@ -1,16 +1,13 @@
 (function($, Drupal, drupalSettings) {
 
 //var lMap = drupalSettings.leaflet[0].lMap;
-    let onlyOnce;
+
     Drupal.behaviors.aen_tools = {
         attach: function (context, drupalSettings) {
-          //console.log("aen_leaflet behaviour");
-        	    //$('.leaflet-container', context).once().each(,function() {
-              if(!onlyOnce) {
-                onlyOnce = true;
-              console.log("aen_leaflet behaviour - once");
-			 /*          var crs = new L.Proj.CRS('EPSG:32661', '+proj=stere +lat_0=90 +lat_ts=90 +lon_0=0 +k=0.994 +x_0=2000000 +y_0=2000000 +ellps=WGS84 +datum=WGS84 +units=m +no_defs',
+        	  $(document).bind('leaflet-map', function(e, map, lMap) {
 
+			   var crs = new L.Proj.CRS('EPSG:32661', '+proj=stere +lat_0=90 +lat_ts=90 +lon_0=0 +k=0.994 +x_0=2000000 +y_0=2000000 +ellps=WGS84 +datum=WGS84 +units=m +no_defs',
+				   {
 					   //origin: [2000000.00,42447.08],
 			    	 //bounds: [[1994055.62,5405875.53],[2000969.46,2555456.55]],
 			 resolutions: [
@@ -38,20 +35,18 @@
                 0.298582153289307 / 16
             ],
 
-  );*/
+  });
 //var center = lMap.getCenter();
 //lMap.options.crs = crs;
 //lMap.continuousWorld = false;
-//let lMap = drupalSettings.leaflet[0].lMap;
 
 //			  map.setView(center);
 
 //lMap._resetView(lMap.getCenter(), lMap.getZoom(), true);
-	console.log(context);
-			  console.log(drupalSettings.leaflet);
-      }
-	},
+	console.log(map);
+			  console.log(lMap);
+	});
 
+    },
 };
-
 })(jQuery, Drupal, drupalSettings);

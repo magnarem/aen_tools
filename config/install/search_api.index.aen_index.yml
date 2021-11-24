@@ -17,7 +17,7 @@ dependencies:
     - field.storage.node.field_eventremarks
     - field.storage.node.field_eventtime
     - field.storage.node.field_geartype
-    - field.storage.node.field_geolocation
+    - field.storage.node.field_aen_geolocation
     - field.storage.node.field_history
     - field.storage.node.field_location
     - field.storage.node.field_metadata
@@ -170,22 +170,22 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_geartype
-  field_geolocation:
+  field_aen_geolocation:
     label: 'Geolocation Lat Lon'
     datasource_id: 'entity:node'
-    property_path: field_geolocation
+    property_path: field_aen_geolocation
     type: rpt
     dependencies:
       config:
-        - field.storage.node.field_geolocation
-  field_geolocation_1:
+        - field.storage.node.field_aen_geolocation
+  field_aen_geolocation_1:
     label: 'Geolocation RPT'
     datasource_id: 'entity:node'
-    property_path: field_geolocation
+    property_path: field_aen_geolocation
     type: location
     dependencies:
       config:
-        - field.storage.node.field_geolocation
+        - field.storage.node.field_aen_geolocation
   field_history:
     label: history
     datasource_id: 'entity:node'
