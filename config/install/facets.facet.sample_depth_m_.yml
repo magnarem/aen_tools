@@ -1,0 +1,62 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.aen_index
+    - views.view.aen_search
+  module:
+    - search_api
+id: sample_depth_m_
+name: 'Sample depth (m)'
+url_alias: sample_depth_m_
+weight: 0
+min_count: 1
+show_only_one_result: false
+field_identifier: field_sampledepthinmeters
+facet_source_id: 'search_api:views_page__aen_search__page_1'
+widget:
+  type: links
+  config:
+    show_numbers: false
+    soft_limit: 10
+    soft_limit_settings:
+      show_less_label: 'Show less'
+      show_more_label: 'Show more'
+    show_reset_link: true
+    reset_text: 'Show all'
+    hide_reset_when_no_selection: true
+query_operator: and
+use_hierarchy: false
+keep_hierarchy_parents_active: false
+expand_hierarchy: false
+enable_parent_when_child_gets_disabled: true
+hard_limit: 30
+exclude: false
+only_visible_when_facet_source_is_visible: false
+processor_configs:
+  granularity_item:
+    processor_id: granularity_item
+    weights:
+      build: 35
+    settings:
+      granularity: 100
+      min_value: 0
+      max_value: 8000
+      include_lower: true
+      include_upper: true
+      include_edges: true
+  raw_value_widget_order:
+    processor_id: raw_value_widget_order
+    weights:
+      sort: 50
+    settings:
+      sort: ASC
+  url_processor_handler:
+    processor_id: url_processor_handler
+    weights:
+      pre_query: 50
+      build: 15
+    settings: {  }
+empty_behavior:
+  behavior: none
+show_title: false
