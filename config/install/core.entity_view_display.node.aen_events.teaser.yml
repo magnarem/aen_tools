@@ -1,0 +1,126 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.aen_events.body
+    - field.field.node.aen_events.field_bottlenumber
+    - field.field.node.aen_events.field_bottomdepthinmeters
+    - field.field.node.aen_events.field_created
+    - field.field.node.aen_events.field_cruisename
+    - field.field.node.aen_events.field_cruisenumber
+    - field.field.node.aen_events.field_eventdate
+    - field.field.node.aen_events.field_eventid
+    - field.field.node.aen_events.field_eventlocation
+    - field.field.node.aen_events.field_eventremarks
+    - field.field.node.aen_events.field_eventtime
+    - field.field.node.aen_events.field_geartype
+    - field.field.node.aen_events.field_geolocation
+    - field.field.node.aen_events.field_history
+    - field.field.node.aen_events.field_location
+    - field.field.node.aen_events.field_metadata
+    - field.field.node.aen_events.field_modified
+    - field.field.node.aen_events.field_other
+    - field.field.node.aen_events.field_parenteventid
+    - field.field.node.aen_events.field_pi_email
+    - field.field.node.aen_events.field_pi_institution
+    - field.field.node.aen_events.field_pi_name
+    - field.field.node.aen_events.field_reordedby
+    - field.field.node.aen_events.field_sampledepthinmeters
+    - field.field.node.aen_events.field_sampletype
+    - field.field.node.aen_events.field_samplingprotocol
+    - field.field.node.aen_events.field_smplelocation
+    - field.field.node.aen_events.field_source
+    - field.field.node.aen_events.field_station_name_ref
+    - field.field.node.aen_events.field_stationname
+    - field.field.node.aen_events.field_timestamp
+    - field.field.node.aen_events.field_unique_stations
+    - node.type.aen_events
+  module:
+    - datetime
+    - text
+    - user
+id: node.aen_events.teaser
+targetEntityType: node
+bundle: aen_events
+mode: teaser
+content:
+  aen_event_children_entity_view_1:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 5
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  field_cruisenumber:
+    type: number_integer
+    weight: 3
+    region: content
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_station_name_ref:
+    type: entity_reference_label
+    weight: 4
+    region: content
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_timestamp:
+    type: datetime_default
+    weight: 2
+    region: content
+    label: inline
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  search_api_excerpt:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_bottlenumber: true
+  field_bottomdepthinmeters: true
+  field_created: true
+  field_cruisename: true
+  field_eventdate: true
+  field_eventid: true
+  field_eventlocation: true
+  field_eventremarks: true
+  field_eventtime: true
+  field_geartype: true
+  field_geolocation: true
+  field_history: true
+  field_location: true
+  field_metadata: true
+  field_modified: true
+  field_other: true
+  field_parenteventid: true
+  field_pi_email: true
+  field_pi_institution: true
+  field_pi_name: true
+  field_reordedby: true
+  field_sampledepthinmeters: true
+  field_sampletype: true
+  field_samplingprotocol: true
+  field_smplelocation: true
+  field_source: true
+  field_stationname: true
+  field_unique_stations: true
+  langcode: true

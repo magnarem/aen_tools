@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_geofield
+    - node.type.aen_stations
+  module:
+    - geofield
+id: node.aen_stations.field_location_geofield
+field_name: field_location_geofield
+entity_type: node
+bundle: aen_stations
+label: 'Location '
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geofield

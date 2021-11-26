@@ -1,0 +1,389 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.aen_events.body
+    - field.field.node.aen_events.field_bottlenumber
+    - field.field.node.aen_events.field_bottomdepthinmeters
+    - field.field.node.aen_events.field_created
+    - field.field.node.aen_events.field_cruisename
+    - field.field.node.aen_events.field_cruisenumber
+    - field.field.node.aen_events.field_eventdate
+    - field.field.node.aen_events.field_eventid
+    - field.field.node.aen_events.field_eventlocation
+    - field.field.node.aen_events.field_eventremarks
+    - field.field.node.aen_events.field_eventtime
+    - field.field.node.aen_events.field_geartype
+    - field.field.node.aen_events.field_geolocation
+    - field.field.node.aen_events.field_history
+    - field.field.node.aen_events.field_location
+    - field.field.node.aen_events.field_metadata
+    - field.field.node.aen_events.field_modified
+    - field.field.node.aen_events.field_other
+    - field.field.node.aen_events.field_parenteventid
+    - field.field.node.aen_events.field_pi_email
+    - field.field.node.aen_events.field_pi_institution
+    - field.field.node.aen_events.field_pi_name
+    - field.field.node.aen_events.field_reordedby
+    - field.field.node.aen_events.field_sampledepthinmeters
+    - field.field.node.aen_events.field_sampletype
+    - field.field.node.aen_events.field_samplingprotocol
+    - field.field.node.aen_events.field_smplelocation
+    - field.field.node.aen_events.field_source
+    - field.field.node.aen_events.field_station_name_ref
+    - field.field.node.aen_events.field_stationname
+    - field.field.node.aen_events.field_timestamp
+    - field.field.node.aen_events.field_unique_stations
+    - node.type.aen_events
+  module:
+    - datetime
+    - field_group
+    - leaflet
+    - text
+    - time_field
+    - user
+third_party_settings:
+  field_group:
+    group_person_of_interest:
+      children:
+        - field_pi_name
+        - field_pi_email
+        - field_pi_institution
+      parent_name: ''
+      weight: 17
+      format_type: details_sidebar
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: true
+        weight: 0
+        required_fields: false
+      label: 'Person of interest'
+    group_sh:
+      children:
+        - field_metadata
+        - field_reordedby
+        - field_eventremarks
+        - field_created
+        - field_modified
+        - field_history
+        - field_other
+        - field_source
+      parent_name: ''
+      weight: 18
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: false
+      label: 'Show metadata'
+id: node.aen_events.default
+targetEntityType: node
+bundle: aen_events
+mode: default
+content:
+  aen_event_children_entity_view_1:
+    weight: 19
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bottlenumber:
+    weight: 15
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: number_unformatted
+    region: content
+  field_bottomdepthinmeters:
+    weight: 14
+    label: inline
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_created:
+    weight: 22
+    label: inline
+    settings:
+      timezone_override: UTC
+      format_type: solr_format
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_cruisename:
+    weight: 9
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_cruisenumber:
+    weight: 8
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_eventdate:
+    type: datetime_default
+    weight: 4
+    region: content
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: html_date
+    third_party_settings: {  }
+  field_eventid:
+    weight: 2
+    label: inline
+    settings:
+      link_to_entity: true
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_eventremarks:
+    weight: 21
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_eventtime:
+    type: time_formatter
+    weight: 5
+    region: content
+    label: inline
+    settings:
+      time_format: 'H:i:s'
+    third_party_settings: {  }
+  field_geartype:
+    weight: 12
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_history:
+    weight: 24
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_location:
+    weight: 1
+    label: hidden
+    settings:
+      multiple_map: false
+      popup: true
+      popup_content: "<strong>Station:</strong> [node:field_stationname]<br>\r\n<strong>Unique station:</strong>[node:field_unique_stations]<br>\r\n<strong>Event location: </strong>[node:field_eventlocation]<br>"
+      leaflet_map: esri-ocean_basemap
+      height: 350
+      height_unit: px
+      hide_empty_map: true
+      fullscreen_control: true
+      reset_map:
+        position: topright
+        control: false
+      map_position:
+        center:
+          lat: !!float 0
+          lon: !!float 0
+        zoom: 4
+        minZoom: 1
+        maxZoom: 18
+        zoomFiner: 0
+        force: false
+      weight: ''
+      icon:
+        iconType: marker
+        iconUrl: ''
+        shadowUrl: ''
+        className: ''
+        html: '<div></div>'
+        html_class: leaflet-map-divicon
+        circle_marker_options: '{"radius":100,"color":"red","fillColor":"#f03","fillOpacity":0.5}'
+        iconSize:
+          x: ''
+          'y': ''
+        iconAnchor:
+          x: ''
+          'y': ''
+        shadowSize:
+          x: ''
+          'y': ''
+        shadowAnchor:
+          x: ''
+          'y': ''
+        popupAnchor:
+          x: ''
+          'y': ''
+      leaflet_markercluster:
+        options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds":false}'
+        control: false
+        include_path: false
+      path: '{"color":"#3388ff","opacity":"1.0","stroke":true,"weight":3,"fill":"depends","fillColor":"*","fillOpacity":"0.2","radius":"6"}'
+      geocoder:
+        settings:
+          position: topright
+          input_size: 25
+          min_terms: 4
+          delay: 800
+          zoom: 16
+          options: ''
+          popup: false
+        control: false
+      disable_wheel: false
+      gesture_handling: false
+    third_party_settings: {  }
+    type: leaflet_formatter_default
+    region: content
+  field_metadata:
+    weight: 19
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_modified:
+    weight: 23
+    label: inline
+    settings:
+      timezone_override: UTC
+      format_type: solr_format
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_other:
+    weight: 25
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_parenteventid:
+    weight: 3
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_pi_email:
+    weight: 15
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: email_mailto
+    region: content
+  field_pi_institution:
+    weight: 16
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_pi_name:
+    weight: 14
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_reordedby:
+    weight: 20
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_sampledepthinmeters:
+    weight: 13
+    label: inline
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_sampletype:
+    weight: 10
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_samplingprotocol:
+    weight: 11
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_smplelocation:
+    weight: 16
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_source:
+    weight: 26
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_station_name_ref:
+    type: entity_reference_label
+    weight: 7
+    region: content
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_timestamp:
+    weight: 6
+    label: inline
+    settings:
+      timezone_override: UTC
+      format_type: solr_format
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_eventlocation: true
+  field_geolocation: true
+  field_stationname: true
+  field_unique_stations: true
+  langcode: true
+  search_api_excerpt: true
