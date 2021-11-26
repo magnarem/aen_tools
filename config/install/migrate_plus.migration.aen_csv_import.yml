@@ -12,12 +12,15 @@ migration_group: aen_import
 label: 'Import AeN Events #2'
 source:
   plugin: csv
-  path: /var/www/multisite/export_aen_2021_08_13.csv
+  path: /var/www/multisite/export_aen_2021_06_16_del.csv
   delimiter: '|'
   header_offset: 0
   ids:
     - eventid
   fields:
+    -
+      name: line
+      label: 'line number'
     -
       name: eventid
       label: 'Event ID'
@@ -37,10 +40,10 @@ source:
       name: eventdate
       label: 'event date'
     -
-      name: decimallatitude
+      name: lat
       label: lat
     -
-      name: decimallongitude
+      name: lon
       label: lon
     -
       name: sampletype
@@ -100,19 +103,10 @@ source:
       name: cruisename
       label: Cruisename
     -
-      name: uniquestations
-      label: 'Unique Stations'
-    -
       name: event_timestamp
       label: 'Event timestamp'
 process:
-  title:
-    -
-      plugin: transform_aen_title
-      source: metadata
-    -
-      plugin: default_value
-      default_value: eventid
+  title: eventid
   field_eventid: eventid
   field_parenteventid: parenteventid
   field_cruisenumber: cruisenumber
@@ -124,40 +118,9 @@ process:
   field_bottlenumber: bottlenumber
   field_samplingprotocol: samplingprotocol
   field_samplelocation: samplelocation
-  field_unique_stations: uniquestations
-  field_pi_name:
-    -
-      plugin: explode
-      source: pi_name
-      delimiter: ';'
-    -
-      plugin: callback
-      callable: trim
-    -
-      plugin: default_value
-      default_value: pi_name
-  field_pi_email:
-    -
-      plugin: explode
-      source: pi_email
-      delimiter: ';'
-    -
-      plugin: callback
-      callable: trim
-    -
-      plugin: default_value
-      default_value: pi_email
-  field_pi_institution:
-    -
-      plugin: explode
-      source: pi_institution
-      delimiter: ';'
-    -
-      plugin: callback
-      callable: trim
-    -
-      plugin: default_value
-      default_value: pi_institution
+  field_pi_name: pi_name
+  field_pi_email: pi_email
+  field_pi_institution: pi_institution
   field_recordedby: recordedby
   field_eventremarks: eventremarks
   field_other/value:
@@ -212,8 +175,8 @@ process:
       to_timezone: UTC
       source: modified
   field_history: history
-  field_geolocation/lat: lat
-  field_geolocation/lng: lon
+  field_aen_geolocation/lat: lat
+  field_aen_geolocation/lng: lon
   field_source:
     plugin: get
     source: source

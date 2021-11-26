@@ -6,8 +6,10 @@
         attach: function (context, drupalSettings) {
          // console.log("aen_leaflet behaviour");
 	//	var lMap = drupalSettings.leaflet[0].lMap;
-        	  $(document).bind('load', function(e, map, lMap) {
-              console.log("aen_leaflet behaviour - bind function");
+        	//  $(document).bind('load', function(e, map, lMap) {
+              //console.log("aen_leaflet behaviour - bind function");
+              //	  $(document).bind('leaflet-map', function(e, map, lMap) {
+
 			   var crs = new L.Proj.CRS('EPSG:32661', '+proj=stere +lat_0=90 +lat_ts=90 +lon_0=0 +k=0.994 +x_0=2000000 +y_0=2000000 +ellps=WGS84 +datum=WGS84 +units=m +no_defs',
 				   {
 					   //origin: [2000000.00,42447.08],

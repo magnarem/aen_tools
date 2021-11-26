@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: aen_import
-label: 'AeN import'
-description: 'Migration Group for import AeN observations'
-source_type: CSV
-module: null
-shared_configuration: null

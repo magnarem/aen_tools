@@ -1,9 +1,9 @@
 name: 'AeN Tools'
 description: 'Module for importing and searching AeN events and stations'
 type: module
-core_version_requirement: '^8.8 || ^9'
-version: 1.0.1
-package: SIOS
+core: 8.x
+version: 1.x
+package: METSIS
 dependencies:
   - search_api
   - views_fieldsets
@@ -41,6 +41,7 @@ dependencies:
   - leaflet_more_markers
   - geolocation_leaflet
   - leaflet_geojson
+  - timepicker
   - migrate
   - migrate_plus
   - migrate_tools
