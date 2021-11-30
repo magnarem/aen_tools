@@ -2,24 +2,24 @@ langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.cruise_name
+    - facets.facet.station_name
   module:
     - facets
     - system
   theme:
     - metsis
-id: cruisename
+id: stationname
 theme: metsis
-region: sidebar_second
-weight: -22
+region: sidebar_first
+weight: -13
 provider: null
-plugin: 'facet_block:cruise_name'
+plugin: 'facet_block:station_name'
 settings:
-  id: 'facet_block:cruise_name'
-  label: 'Cruise name'
+  id: 'facet_block:station_name'
+  label: 'Station name'
   provider: facets
   label_display: visible
-  block_id: cruisename
+  block_id: stationname
 visibility:
   request_path:
     id: request_path

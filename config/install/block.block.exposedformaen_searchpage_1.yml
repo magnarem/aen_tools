@@ -2,28 +2,27 @@ langcode: en
 status: true
 dependencies:
   config:
-    - views.view.aen_stations_map_block
+    - views.view.aen_search
   module:
     - system
     - views
   theme:
     - metsis
-id: views_block__aen_stations_map_block_block_1
+id: exposedformaen_searchpage_1
 theme: metsis
-region: content
-weight: -19
+region: sidebar_first
+weight: -14
 provider: null
-plugin: 'views_block:aen_stations_map_block-block_1'
+plugin: 'views_exposed_filter_block:aen_search-page_1'
 settings:
-  id: 'views_block:aen_stations_map_block-block_1'
+  id: 'views_exposed_filter_block:aen_search-page_1'
   label: ''
   provider: views
   label_display: '0'
   views_label: ''
-  items_per_page: none
 visibility:
   request_path:
     id: request_path
-    pages: /aen/stations
+    pages: '/aen/*'
     negate: false
     context_mapping: {  }

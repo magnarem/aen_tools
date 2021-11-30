@@ -7,11 +7,11 @@ dependencies:
     - facets
     - system
   theme:
-    - sios
+    - metsis
 id: personofinterest
 theme: metsis
 region: sidebar_first
-weight: -5
+weight: -12
 provider: null
 plugin: 'facet_block:person_of_interest'
 settings:
