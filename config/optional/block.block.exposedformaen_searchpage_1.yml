@@ -9,7 +9,7 @@ dependencies:
   theme:
     - sios 
 id: exposedformaen_searchpage_1
-theme: metsis
+theme: sios 
 region: sidebar_first
 weight: -7
 provider: null

@@ -7,9 +7,9 @@ dependencies:
     - facets
     - system
   theme:
-    - metsis
+    - sios
 id: stationname
-theme: metsis
+theme: sios
 region: sidebar_first
 weight: -13
 provider: null

@@ -7,9 +7,9 @@ dependencies:
     - facets
     - system
   theme:
-    - metsis
+    - sios 
 id: sampledepthm
-theme: metsis
+theme: sios
 region: sidebar_second
 weight: -18
 provider: null

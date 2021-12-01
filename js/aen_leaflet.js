@@ -47,10 +47,10 @@
 //			  map.setView(center);
 
 //lMap._resetView(lMap.getCenter(), lMap.getZoom(), true);
-	console.log(map);
-			  console.log(lMap);
-	});
+//	console.log(map);
+//			  console.log(lMap);
+	//});
 
-    },
+	}, 
 };
 })(jQuery, Drupal, drupalSettings);

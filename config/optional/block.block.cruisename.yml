@@ -7,9 +7,9 @@ dependencies:
     - facets
     - system
   theme:
-    - metsis
+    - sios 
 id: cruisename
-theme: metsis
+theme: sios 
 region: sidebar_second
 weight: -22
 provider: null

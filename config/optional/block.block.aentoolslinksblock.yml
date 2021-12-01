@@ -7,7 +7,7 @@ dependencies:
   theme:
     - sios 
 id: aentoolslinksblock
-theme: metsis
+theme: sios 
 region: sidebar_second
 weight: -19
 provider: null
