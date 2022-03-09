@@ -15,7 +15,7 @@ dependencies:
     - field.field.node.aen_events.field_eventremarks
     - field.field.node.aen_events.field_eventtime
     - field.field.node.aen_events.field_geartype
-    - field.field.node.aen_events.field_aen_geolocation
+    - field.field.node.aen_events.field_geolocation
     - field.field.node.aen_events.field_history
     - field.field.node.aen_events.field_location
     - field.field.node.aen_events.field_metadata
@@ -34,6 +34,7 @@ dependencies:
     - field.field.node.aen_events.field_station_name_ref
     - field.field.node.aen_events.field_stationname
     - field.field.node.aen_events.field_timestamp
+    - field.field.node.aen_events.field_unique_stations
     - node.type.aen_events
   module:
     - datetime
@@ -104,7 +105,7 @@ hidden:
   field_eventremarks: true
   field_eventtime: true
   field_geartype: true
-  field_aen_geolocation: true
+  field_geolocation: true
   field_history: true
   field_location: true
   field_metadata: true
@@ -121,4 +122,5 @@ hidden:
   field_smplelocation: true
   field_source: true
   field_stationname: true
+  field_unique_stations: true
   langcode: true

@@ -1,0 +1,55 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.aen_index
+    - views.view.aen_search
+  module:
+    - views
+    - search_api_autocomplete
+    - search_api_solr
+id: aen_search
+label: 'AeN Search'
+index_id: aen_index
+suggester_settings:
+  live_results:
+    fields:
+      - field_cruisename_1
+      - field_eventremarks
+      - field_metadata
+      - field_samplingprotocol
+      - field_stationname_1
+      - title
+    view_modes:
+      'entity:node':
+        aen_events: ''
+    highlight:
+      enabled: false
+      field: field_stationname_1
+  server:
+    fields: {  }
+  search_api_solr_suggester:
+    search_api_solr/site_hash: 1
+    search_api/index: aen_index
+    drupal/langcode: any
+suggester_weights:
+  live_results: 0
+  server: 0
+  search_api_solr_suggester: 0
+suggester_limits:
+  live_results: 5
+  server: 10
+  search_api_solr_suggester: 10
+search_settings:
+  'views:aen_search':
+    displays:
+      default: true
+      selected:
+        - geojson_export_1
+options:
+  limit: 10
+  min_length: 1
+  show_count: false
+  autosubmit: false
+  submit_button_selector: ':submit'
+  delay: null

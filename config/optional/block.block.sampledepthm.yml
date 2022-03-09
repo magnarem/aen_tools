@@ -2,24 +2,24 @@ langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.cruise_name
+    - facets.facet.sample_depth_m_
   module:
     - facets
     - system
   theme:
     - sios 
-id: cruisename
-theme: sios 
+id: sampledepthm
+theme: sios
 region: sidebar_second
-weight: -22
+weight: -18
 provider: null
-plugin: 'facet_block:cruise_name'
+plugin: 'facet_block:sample_depth_m_'
 settings:
-  id: 'facet_block:cruise_name'
-  label: 'Cruise name'
+  id: 'facet_block:sample_depth_m_'
+  label: 'Sample depth (m)'
   provider: facets
   label_display: visible
-  block_id: cruisename
+  block_id: sampledepthm
 visibility:
   request_path:
     id: request_path

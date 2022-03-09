@@ -7,11 +7,11 @@ dependencies:
     - system
     - views
   theme:
-    - sios
+    - sios 
 id: views_block__aen_stations_map_block_block_1
-theme: metsis
+theme: sios 
 region: content
-weight: -20
+weight: -19
 provider: null
 plugin: 'views_block:aen_stations_map_block-block_1'
 settings:

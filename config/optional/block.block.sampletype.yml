@@ -9,14 +9,14 @@ dependencies:
   theme:
     - sios
 id: sampletype
-theme: metsis
+theme: sios
 region: sidebar_second
-weight: -17
+weight: -19
 provider: null
 plugin: 'facet_block:sampletype'
 settings:
   id: 'facet_block:sampletype'
-  label: Sampletype
+  label: 'Sample type'
   provider: facets
   label_display: visible
   block_id: sampletype

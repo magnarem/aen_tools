@@ -12,7 +12,7 @@ migration_group: aen_import
 label: 'Import AeN Stations #1'
 source:
   plugin: csv
-  path: /var/www/multisite/aen_stations.csv
+  path: /var/www/multisite/export_aen_2021_11_08_stations.csv
   header_offset: 0
   ids:
     - stationname
@@ -21,31 +21,24 @@ source:
       name: stationname
       label: 'Station name key'
     -
-      name: avglat
-      label: 'Average Latitude'
+      name: lon
+      label: Longitude
     -
-      name: avglong
-      label: 'Average longitue'
-    -
-      name: avgdepth
-      label: 'Average bottom depth'
-    -
-      name: sname
-      label: 'Station name'
+      name: lat
+      label: Latitude
 process:
   title:
     plugin: skip_on_empty
     method: row
     source: stationname
-  field_station_name: sname
-  field_bottom_depth: avgdepth
-  field_location_geolocation/lat: avglat
-  field_location_geolocation/lng: avglong
+  field_station_name: stationname
+  field_location_geolocation/lat: lat
+  field_location_geolocation/lng: lon
   field_location_geofield:
     plugin: geofield_latlon
     source:
-      - avglat
-      - avglong
+      - lat
+      - lon
   type:
     plugin: default_value
     default_value: aen_stations

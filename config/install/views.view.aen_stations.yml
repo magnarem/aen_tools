@@ -32,8 +32,12 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: tag
-        options: {  }
+        type: time
+        options:
+          results_lifespan: 518400
+          results_lifespan_custom: 0
+          output_lifespan: 21600
+          output_lifespan_custom: 0
       query:
         type: views_query
         options:
@@ -567,6 +571,9 @@ display:
     position: 1
     display_options:
       display_extenders:
+        library_in_views_display_extender:
+          attach_library:
+            attach_library: aen_tools/aen
         geocluster_views_display_extender:
           geocluster_enabled: false
           geocluster_options:
@@ -581,9 +588,6 @@ display:
               cluster_distance_per_zoom_level:
                 '|': '|'
         views_merge_rows: {  }
-        library_in_views_display_extender:
-          attach_library:
-            attach_library: aen_tools/aen
       path: aen/stations
       style:
         type: table

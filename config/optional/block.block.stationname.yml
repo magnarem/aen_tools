@@ -2,24 +2,24 @@ langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.niskin_bottle
+    - facets.facet.station_name
   module:
     - facets
     - system
   theme:
     - sios
-id: niskinbottle
-theme: metsis
-region: sidebar_second
-weight: -16
+id: stationname
+theme: sios
+region: sidebar_first
+weight: -13
 provider: null
-plugin: 'facet_block:niskin_bottle'
+plugin: 'facet_block:station_name'
 settings:
-  id: 'facet_block:niskin_bottle'
-  label: 'Niskin bottle'
+  id: 'facet_block:station_name'
+  label: 'Station name'
   provider: facets
   label_display: visible
-  block_id: niskinbottle
+  block_id: stationname
 visibility:
   request_path:
     id: request_path

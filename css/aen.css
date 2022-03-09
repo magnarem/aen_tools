@@ -37,6 +37,14 @@
         color: grey !important;
 }
 
+/*
+* Remove bullets from facet checkboxes
+*/
+ul.js-facets-checkbox-links {
+  list-style-type: none;
+
+
+}
 .aen-details {
    border-color: black !important;
    border-width: 1px !important;

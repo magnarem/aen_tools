@@ -7,11 +7,11 @@ dependencies:
     - system
     - views
   theme:
-    - sios 
+    - metsis
 id: exposedformaen_searchpage_1
-theme: sios 
+theme: metsis
 region: sidebar_first
-weight: -7
+weight: -14
 provider: null
 plugin: 'views_exposed_filter_block:aen_search-page_1'
 settings:

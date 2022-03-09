@@ -13,11 +13,12 @@ dependencies:
     - field.storage.node.field_cruisename
     - field.storage.node.field_cruisenumber
     - field.storage.node.field_eventdate
+    - field.storage.node.field_timestamp
     - field.storage.node.field_eventid
     - field.storage.node.field_eventremarks
     - field.storage.node.field_eventtime
     - field.storage.node.field_geartype
-    - field.storage.node.field_aen_geolocation
+    - field.storage.node.field_geolocation
     - field.storage.node.field_history
     - field.storage.node.field_location
     - field.storage.node.field_metadata
@@ -29,12 +30,12 @@ dependencies:
     - field.storage.node.field_pi_name
     - field.storage.node.field_reordedby
     - field.storage.node.field_sampledepthinmeters
+    - field.storage.node.field_smplelocation
     - field.storage.node.field_sampletype
     - field.storage.node.field_samplingprotocol
-    - field.storage.node.field_smplelocation
     - field.storage.node.field_source
     - field.storage.node.field_stationname
-    - field.storage.node.field_timestamp
+    - field.storage.node.field_unique_stations
     - search_api.server.localhost_aen_events
 third_party_settings:
   search_api_solr:
@@ -94,7 +95,7 @@ field_settings:
     label: 'Bottom depth in meters'
     datasource_id: 'entity:node'
     property_path: field_bottomdepthinmeters
-    type: string
+    type: decimal
     dependencies:
       config:
         - field.storage.node.field_bottomdepthinmeters
@@ -146,6 +147,22 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_eventid
+  field_eventid_1:
+    label: 'Event ID Suggester'
+    datasource_id: 'entity:node'
+    property_path: field_eventid
+    type: solr_text_suggester
+    dependencies:
+      config:
+        - field.storage.node.field_eventid
+  field_eventid_2:
+    label: 'Event ID Fulttext'
+    datasource_id: 'entity:node'
+    property_path: field_eventid
+    type: solr_text_unstemmed
+    dependencies:
+      config:
+        - field.storage.node.field_eventid
   field_eventremarks:
     label: 'Event remarks'
     datasource_id: 'entity:node'
@@ -170,22 +187,22 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_geartype
-  field_aen_geolocation:
+  field_geolocation:
     label: 'Geolocation Lat Lon'
     datasource_id: 'entity:node'
-    property_path: field_aen_geolocation
-    type: rpt
-    dependencies:
-      config:
-        - field.storage.node.field_aen_geolocation
-  field_aen_geolocation_1:
-    label: 'Geolocation RPT'
-    datasource_id: 'entity:node'
-    property_path: field_aen_geolocation
+    property_path: field_geolocation
     type: location
     dependencies:
       config:
-        - field.storage.node.field_aen_geolocation
+        - field.storage.node.field_geolocation
+  field_geolocation_1:
+    label: 'Geolocation RPT'
+    datasource_id: 'entity:node'
+    property_path: field_geolocation
+    type: rpt
+    dependencies:
+      config:
+        - field.storage.node.field_geolocation
   field_history:
     label: history
     datasource_id: 'entity:node'
@@ -215,7 +232,6 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: field_metadata
     type: text
-    boost: !!float 2
     dependencies:
       config:
         - field.storage.node.field_metadata
@@ -279,7 +295,7 @@ field_settings:
     label: 'Sample depth in meters'
     datasource_id: 'entity:node'
     property_path: field_sampledepthinmeters
-    type: string
+    type: decimal
     dependencies:
       config:
         - field.storage.node.field_sampledepthinmeters
@@ -339,6 +355,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_timestamp
+  field_unique_stations:
+    label: 'Unique stations'
+    datasource_id: 'entity:node'
+    property_path: field_unique_stations
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_unique_stations
   promote:
     label: 'Promoted to front page'
     datasource_id: 'entity:node'
@@ -352,7 +376,6 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: title
     type: text
-    boost: !!float 3
     dependencies:
       module:
         - node
@@ -406,4 +429,5 @@ tracker_settings:
 options:
   index_directly: true
   cron_limit: 50
+  track_changes_in_references: true
 server: localhost_aen_events

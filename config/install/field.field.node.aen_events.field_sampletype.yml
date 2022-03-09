@@ -8,7 +8,7 @@ id: node.aen_events.field_sampletype
 field_name: field_sampletype
 entity_type: node
 bundle: aen_events
-label: 'Sample type'
+label: Sampletype
 description: ''
 required: false
 translatable: false

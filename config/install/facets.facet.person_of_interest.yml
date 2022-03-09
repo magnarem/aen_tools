@@ -15,7 +15,7 @@ show_only_one_result: false
 field_identifier: field_pi_name
 facet_source_id: 'search_api:views_page__aen_search__page_1'
 widget:
-  type: links
+  type: checkbox
   config:
     show_numbers: true
     soft_limit: 10

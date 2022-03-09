@@ -14,7 +14,7 @@ dependencies:
     - field.field.node.aen_events.field_eventremarks
     - field.field.node.aen_events.field_eventtime
     - field.field.node.aen_events.field_geartype
-    - field.field.node.aen_events.field_aen_geolocation
+    - field.field.node.aen_events.field_geolocation
     - field.field.node.aen_events.field_history
     - field.field.node.aen_events.field_location
     - field.field.node.aen_events.field_metadata
@@ -33,6 +33,7 @@ dependencies:
     - field.field.node.aen_events.field_station_name_ref
     - field.field.node.aen_events.field_stationname
     - field.field.node.aen_events.field_timestamp
+    - field.field.node.aen_events.field_unique_stations
     - node.type.aen_events
   module:
     - datetime
@@ -87,7 +88,7 @@ bundle: aen_events
 mode: default
 content:
   aen_event_children_entity_view_1:
-    weight: 21
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -189,7 +190,7 @@ content:
     settings:
       multiple_map: false
       popup: true
-      popup_content: '[node:field_stationname]'
+      popup_content: "<strong>Station:</strong> [node:field_stationname]<br>\r\n<strong>Unique station:</strong>[node:field_unique_stations]<br>\r\n<strong>Event location: </strong>[node:field_eventlocation]<br>"
       leaflet_map: esri-ocean_basemap
       height: 350
       height_unit: px
@@ -381,7 +382,8 @@ content:
 hidden:
   body: true
   field_eventlocation: true
-  field_aen_geolocation: true
+  field_geolocation: true
   field_stationname: true
+  field_unique_stations: true
   langcode: true
   search_api_excerpt: true
