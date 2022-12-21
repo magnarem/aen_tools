@@ -9,28 +9,28 @@ aen:
     js/aen_leaflet.js: {}
   dependencies:
     - core/jquery
-    - core/jquery.ui
-    - core/jquery.once
+    - jquery_ui/core
+    - core/once
     - core/drupal
     - core/drupalSettings
     - core/drupal.ajax
     - core/drupal.dialog
     - core/drupal.dialog.ajax
-    - core/jquery.form
+#    - core/jquery.form
     - jquery_ui_draggable/draggable
     - leaflet/leaflet
     - leaflet/leaflet-drupal
 
-leaflet-drupal:
-  version: 1.x
-  js:
-    https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.min.js: { type: external }
+#leaflet-drupal:
+#  version: 1.x
+#  js:
+#    https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.min.js: { type: external }
     #js/leaflet.drupal.js: {}
-  dependencies:
-    - core/jquery
-    - core/jquery.once
-    - core/drupal
-    - leaflet/leaflet
+#  dependencies:
+#    - core/jquery
+#    - core/once
+#    - core/drupal
+#    - leaflet/leaflet
 
 #libraries-override:
   # Replace an entire library.
