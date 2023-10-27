@@ -21,16 +21,16 @@ aen:
     - leaflet/leaflet
     - leaflet/leaflet-drupal
 
-leaflet-drupal:
-  version: 1.x
-  js:
-    https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.min.js: { type: external }
+#leaflet-drupal:
+#  version: 1.x
+#  js:
+#    https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.min.js: { type: external }
     #js/leaflet.drupal.js: {}
-  dependencies:
-    - core/jquery
-    - core/once
-    - core/drupal
-    - leaflet/leaflet
+#  dependencies:
+#    - core/jquery
+#    - core/once
+#    - core/drupal
+#    - leaflet/leaflet
 
 #libraries-override:
   # Replace an entire library.
