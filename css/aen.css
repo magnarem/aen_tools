@@ -42,9 +42,30 @@
 */
 ul.js-facets-checkbox-links {
   list-style-type: none;
-
-
 }
+
+/* No not use bold lables */
+.js-form-type-search-api-autocomplete > label,
+div.js-form-type-date > label{
+        font-weight: normal;
+}
+views-exposed-form-aen-search-page-1 > label {
+        font-weight: normal;
+}
+
+label .field__label {
+        font-weight: normal;
+}
+.facets-checkbox > label {
+        font-weight: normal;
+}
+
+/* Make sure no bold facets */
+label,
+.field__label {
+  font-weight: normal !important;
+}
+
 .aen-details {
    border-color: black !important;
    border-width: 1px !important;

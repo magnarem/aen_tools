@@ -1,6 +1,8 @@
 <?php
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\views\ViewExecutable;
+
 
 function aen_tools_help($route_name, RouteMatchInterface $route_match)
 {
@@ -30,4 +32,16 @@ function aen_tools_theme( $existing, $type, $theme, $path ){
               ],
         ],
     ];
+}
+
+
+/**
+ * Implements hook_views_pre_render().
+ *
+ * Adding  our custom css to the AeN search views.
+ */
+function aen_tools_views_pre_render(ViewExecutable $view) {
+  if (isset($view) && (($view->storage->id() == 'aen_stations') || ($view->storage->id() == 'aen_search'))) {
+    $view->element['#attached']['library'][] = 'aen_tools/aen';
+  }
 }

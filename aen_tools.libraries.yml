@@ -9,14 +9,14 @@ aen:
     js/aen_leaflet.js: {}
   dependencies:
     - core/jquery
-    - core/jquery.ui
-    - core/jquery.once
+    - jquery_ui/core
+    - core/once
     - core/drupal
     - core/drupalSettings
     - core/drupal.ajax
     - core/drupal.dialog
     - core/drupal.dialog.ajax
-    - core/jquery.form
+#    - core/jquery.form
     - jquery_ui_draggable/draggable
     - leaflet/leaflet
     - leaflet/leaflet-drupal
@@ -28,7 +28,7 @@ leaflet-drupal:
     #js/leaflet.drupal.js: {}
   dependencies:
     - core/jquery
-    - core/jquery.once
+    - core/once
     - core/drupal
     - leaflet/leaflet
 
