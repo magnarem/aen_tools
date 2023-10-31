@@ -17,7 +17,6 @@ aen:
     - core/drupal.dialog
     - core/drupal.dialog.ajax
 #    - core/jquery.form
-    - jquery_ui_draggable/draggable
     - leaflet/leaflet
     - leaflet/leaflet-drupal
 

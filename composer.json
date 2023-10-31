@@ -1,0 +1,10 @@
+{
+    "name": "metno/aen_tools",
+    "type": "drupal-custom-module",
+    "description": "Module AeN data. One part of the module implements importing AeN events and stations using migrations. Another part implements AeN stations and events searches using search_api and search_api_solr",
+    "license": "GPL-2.0-or-later",
+    "scripts": {
+        "sniff": "phpcs --colors -n --standard=Drupal --extensions=php,module,yml src",
+        "snifferfix": "phpcbf --colors -n --standard=Drupal --extensions=php,module,yml src"
+    }
+}
